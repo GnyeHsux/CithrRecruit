@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/menu_item_1"
+            android:title="@string/item1"
+            />
+        <item
+            android:id="@+id/menu_item_2"
+            android:title="@string/item2"
+            />
+        <item android:title="个人">
+            <menu>
+                <item
+                    android:id="@+id/menu_item_3"
+                    android:title="@string/item3"
+                    />
+
+                <item
+                    android:id="@+id/menu_item_4"
+                    android:title="@string/item4"
+                    />
+            </menu>
+        </item>
+        <item android:title="其他">
+            <menu>
+                <item
+                    android:id="@+id/menu_item_5"
+                    android:title="@string/item5"
+                    />
+
+                <item
+                    android:id="@+id/menu_item_6"
+                    android:title="@string/item6"
+                    />
+
+                <item
+                    android:id="@+id/menu_item_7"
+                    android:title="@string/item7"
+                    />
+            </menu>
+        </item>
+
+    </group>
+</menu>
