@@ -13,6 +13,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.cithr.jackdraw.cithrrecruit.R;
+import cn.cithr.jackdraw.cithrrecruit.utils.RegexUtils;
 
 /**
  * Created by xusha on 2016/5/24.
@@ -56,12 +57,19 @@ public class ForgotPwdFragment extends BaseFragment {
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_get_code:
-                mTimeCount = new TimeCount(60000, 1000);
-                mTimeCount.start();
-                //获取验证码
-                //SMSSDK.getVerificationCode("86", etPhone.getText().toString().trim());
+                String mobile = mEtForgotPhone.getText().toString().trim();
 
+                //检查手机号是否合法
+                if (!RegexUtils.checkMobile(mobile)) {
+                    mEtForgotPhone.setError("手机号码不正确");
+                } else {        //合法则获取验证码
+                    mTimeCount = new TimeCount(60000, 1000);
+                    mTimeCount.start();
+                    //获取验证码
+                    //SMSSDK.getVerificationCode("86", etPhone.getText().toString().trim());
+                }
                 break;
+
             case R.id.btn_submit_code:
 
                 //提交验证码成功后，重置密码

@@ -10,6 +10,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import cn.cithr.jackdraw.cithrrecruit.R;
+import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 /**
  * Created by xusha on 2016/5/24.
@@ -27,7 +28,7 @@ public class ResetPwdFragment extends BaseFragment {
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-        setToolbar(mToolbar,R.string.title_reset_new_pwd);
+        setToolbar(mToolbar, R.string.title_reset_new_pwd);
     }
 
     @Override
@@ -38,5 +39,15 @@ public class ResetPwdFragment extends BaseFragment {
 
     @OnClick(R.id.btn_submit_new_pwd)
     public void onClick() {
+        String pwd1 = mEtNewPwd.getText().toString().trim();
+        String pwd2 = mEtNewPwdAgain.getText().toString().trim();
+        if (pwd1.length() < 6) {
+            mEtNewPwd.setError("密码长度不能小于6位");
+        } else if (!pwd1.equals(pwd2)) {
+            mEtNewPwdAgain.setError("密码不一致，请在确认一遍");
+        } else {
+            //继续修改密码程序
+            ToastUtils.showShort(getHoldingActivity(),"开始修改密码");
+        }
     }
 }

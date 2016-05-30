@@ -67,9 +67,11 @@ public class LoginFragment extends BaseFragment implements LoginView {
     }
 
 
+    //控件点击监控事件
     @OnClick({R.id.btn_login, R.id.tv_forget_pwd, R.id.tv_register, R.id.tv_goto_home})
     public void onClick(View view) {
         switch (view.getId()) {
+            //登陆按钮事件
             case R.id.btn_login:
                 //loginThread = new HandlerThread(loginRunnable);
                 //Toast.makeText(getActivity(), "登陆", Toast.LENGTH_SHORT).show();
@@ -78,16 +80,17 @@ public class LoginFragment extends BaseFragment implements LoginView {
                 handler = new Handler(loginThread.getLooper());
                 handler.post(loginRunnable);
                 break;
+            //忘记密码事件
             case R.id.tv_forget_pwd:
-                //Toast.makeText(getActivity(), "忘记密码", Toast.LENGTH_SHORT).show();
                 addFragment(new ForgotPwdFragment());
                 break;
+            //注册事件
             case R.id.tv_register:
-                //Toast.makeText(getActivity(), "注册", Toast.LENGTH_SHORT).show();
                 startActivity(new Intent(getHoldingActivity(), RegisterActivity.class));
                 break;
+            //随便逛逛事件
             case R.id.tv_goto_home:
-                Toast.makeText(getActivity(), "随便逛逛", Toast.LENGTH_SHORT).show();
+                getHoldingActivity().finish();
                 break;
         }
     }
