@@ -16,7 +16,7 @@ import cn.cithr.jackdraw.cithrrecruit.R;
 /**
  * Created by xusha on 2016/5/25.
  */
-public class RegUserInfoAdapter extends RecyclerView.Adapter {
+public class UserInfoAdapter extends RecyclerView.Adapter {
 
     private final int ITEMCOUNT = 9;
 
@@ -71,6 +71,8 @@ public class RegUserInfoAdapter extends RecyclerView.Adapter {
         TextView mItemName;
         @BindView(R.id.root_view)
         LinearLayout mRootView;
+        @BindView(R.id.tv_normal_item_value)
+        TextView mItemValue;
 
         public NormalHolder(View itemView) {
             super(itemView);

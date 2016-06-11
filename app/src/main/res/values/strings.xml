@@ -45,4 +45,5 @@
     <string name="item_mobile">手机号码</string>
     <string name="title_user_info">个人信息</string>
     <string name="user_info_save">保存</string>
+    <string name="title_job_info">职位详情</string>
 </resources>
