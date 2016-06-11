@@ -1,5 +1,6 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.activity;
 
+
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.BaseFragment;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.LoginFragment;
 
@@ -12,4 +13,6 @@ public class LoginActivity extends AppActivity {
     protected BaseFragment getFirstFragment() {
         return LoginFragment.newIntance();
     }
+
+    
 }
