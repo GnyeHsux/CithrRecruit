@@ -36,6 +36,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     //移除fragment
     public void removeFragment() {
+
         if (getSupportFragmentManager().getBackStackEntryCount() > 1) {
             getSupportFragmentManager().popBackStack();
         } else {

@@ -31,11 +31,11 @@
     <string name="btn_submit_new_pwd">确认修改</string>
     <string name="title_reset_new_pwd">重置密码</string>
     <string name="tv_reg_username">用户名</string>
-    <string name="et_reg_username_hint">至少4位字母或数字</string>
+    <string name="et_reg_username_hint">请输入用户名</string>
     <string name="tv_reg_email">邮箱</string>
     <string name="et_reg_email_hint">请输入常用邮箱</string>
     <string name="tv_reg_pwd">密码</string>
-    <string name="et_reg_pwd_hint">6-16位密码</string>
+    <string name="et_reg_pwd_hint">请输入密码</string>
     <string name="tv_reg_pwd_again">确认密码</string>
     <string name="et_reg_pwd_again_hint">请再输入一遍密码</string>
     <string name="title_register">注册</string>
@@ -45,4 +45,5 @@
     <string name="item_mobile">手机号码</string>
     <string name="title_user_info">个人信息</string>
     <string name="user_info_save">保存</string>
+    <string name="title_job_info">职位详情</string>
 </resources>

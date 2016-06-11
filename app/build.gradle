@@ -7,7 +7,7 @@ android {
     defaultConfig {
         applicationId "cn.cithr.jackdraw.cithrrecruit"
         minSdkVersion 16
-        targetSdkVersion 23
+        targetSdkVersion 22
         versionCode 1
         versionName "1.0"
     }
@@ -39,4 +39,5 @@ dependencies {
     compile 'de.hdodenhof:circleimageview:1.3.0'
     compile 'com.jakewharton:butterknife:8.0.1'
     apt 'com.jakewharton:butterknife-compiler:8.0.1'
+    compile 'com.android.support:cardview-v7:23.3.0'
 }
