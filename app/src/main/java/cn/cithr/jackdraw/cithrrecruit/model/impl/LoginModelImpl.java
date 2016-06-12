@@ -1,7 +1,6 @@
 package cn.cithr.jackdraw.cithrrecruit.model.impl;
 
 import android.content.Context;
-import android.util.Log;
 
 import com.google.gson.Gson;
 
