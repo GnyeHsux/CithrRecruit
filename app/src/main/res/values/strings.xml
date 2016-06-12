@@ -53,4 +53,6 @@
     <string name="result_login">MyLoginResult</string>
     <string name="method_register">UserRegister</string>
     <string name="result_register">UserRegisterResult</string>
+    <string name="job_info_add_favorite_job">收藏</string>
+    <string name="title_company_info">公司详情</string>
 </resources>

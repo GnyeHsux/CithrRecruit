@@ -54,10 +54,14 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
         mRecyclerView.setAdapter(mAdapter);
         mRefreshLayout.setOnRefreshListener(this);
 
+        //recyclerView中Item的点击监听事件
         mRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getHoldingActivity(), mRecyclerView, new RecyclerViewClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                addFragment(new JobInfoFragment());
+                if (position != -1) {       //莫名其妙的bug
+                    //传入职位id
+                    addFragment(new JobInfoFragment());
+                }
             }
         }));
 
@@ -96,6 +100,7 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
     @Override
     public void onRefresh() {
         updateData();
+        mAdapter.notifyDataSetChanged();
         //数据重新加载完成后，提示数据发生改变，并且设置现在不在刷新
         mRefreshLayout.setRefreshing(false);
     }
@@ -104,6 +109,5 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
     private void updateData() {
         //我在List最前面加入一条数据
         mData.add(0, "");
-        mAdapter.notifyDataSetChanged();
     }
 }
