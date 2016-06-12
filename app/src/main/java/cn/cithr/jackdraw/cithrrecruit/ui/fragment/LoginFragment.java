@@ -20,11 +20,12 @@ import cn.cithr.jackdraw.cithrrecruit.presenter.impl.LoginPresenter;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.MainActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.RegisterActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.view.LoginView;
+import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 /**
  * Created by xusha on 2016/5/23.
  */
-public class LoginFragment extends BaseFragment implements LoginView {
+public class LoginFragment extends BaseFragment implements LoginView, BaseFragment.MyOnClickListener {
     @BindView(R.id.et_name)
     EditText mEtName;
     @BindView(R.id.et_pwd)
@@ -59,6 +60,7 @@ public class LoginFragment extends BaseFragment implements LoginView {
         ButterKnife.bind(this, view);
         setToolbar(mToolbar, R.string.title_login);
         loginPresenter = new LoginPresenter(view.getContext(), this);
+        mBtnLogin.setOnClickListener(this);
     }
 
     @Override
@@ -66,10 +68,9 @@ public class LoginFragment extends BaseFragment implements LoginView {
         return R.layout.fragment_login;
     }
 
-
     //控件点击监控事件
-    @OnClick({R.id.btn_login, R.id.tv_forget_pwd, R.id.tv_register, R.id.tv_goto_home})
-    public void onClick(View view) {
+    @Override
+    public void myOnClick(View view) {
         switch (view.getId()) {
             //登陆按钮事件
             case R.id.btn_login:

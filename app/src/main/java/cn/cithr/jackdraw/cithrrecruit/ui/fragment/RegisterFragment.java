@@ -28,6 +28,8 @@ public class RegisterFragment extends BaseFragment {
     @BindView(R.id.btn_reg)
     Button mBtnRegNext;
 
+    private String userName = "", email = "", pwd1 = "", pwd2 = "";
+
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         ButterKnife.bind(this, view);

@@ -1,22 +1,30 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 
 import android.app.Activity;
+import android.content.IntentFilter;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import cn.cithr.jackdraw.cithrrecruit.app.MyApplication;
+import cn.cithr.jackdraw.cithrrecruit.receiver.NetworkChangeReceiver;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.BaseActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.MainActivity;
+import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 
 /**
  * Created by xusha on 2016/5/24.
  */
-public abstract class BaseFragment extends Fragment {
+public abstract class BaseFragment extends Fragment implements View.OnClickListener {
     protected BaseActivity mActivity;
+    private MyApplication app;
+    MyOnClickListener myOnClickListener;
 
     protected abstract void initView(View view, Bundle savedInstanceState);
 
@@ -49,14 +57,12 @@ public abstract class BaseFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-
         View view = inflater.inflate(getLayoutId(), container, false);
         initView(view, savedInstanceState);
-
         return view;
     }
 
-    public void setToolbar(Toolbar toolbar, int title){
+    public void setToolbar(Toolbar toolbar, int title) {
         toolbar.setTitle(title);
         getHoldingActivity().setSupportActionBar(toolbar);
         getHoldingActivity().getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -65,10 +71,28 @@ public abstract class BaseFragment extends Fragment {
             public void onClick(View v) {
                 if (getHoldingActivity().getSupportFragmentManager().getBackStackEntryCount() == 1) {
                     getHoldingActivity().finish();
-                }else {
+                } else {
                     removeFragment();
                 }
             }
         });
+    }
+
+    @Override
+    public void onClick(View view) {
+        app = (MyApplication) getContext().getApplicationContext();
+        if(app.getIsNetwork()){
+            myOnClickListener.myOnClick(view);
+        }else{
+            ToastUtils.makeShortText("网络连接失败,请检查你的网络设置",getHoldingActivity());
+        }
+    }
+
+    public interface MyOnClickListener {
+        void myOnClick(View view);
+    }
+
+    public void setMyOnClickListener(MyOnClickListener mOnClickListener) {
+        this.myOnClickListener = mOnClickListener;
     }
 }
