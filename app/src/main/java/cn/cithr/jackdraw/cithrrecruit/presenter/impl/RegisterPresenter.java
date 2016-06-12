@@ -30,7 +30,7 @@ public class RegisterPresenter implements OnRegisterListener {
 
     @Override
     public void onRegisterFail() {
-
+        mRegisterView.showToast("注册失败");
     }
 
     @Override
