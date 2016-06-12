@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.os.HandlerThread;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -75,10 +74,16 @@ public class LoginFragment extends BaseFragment implements LoginView {
             case R.id.btn_login:
                 //loginThread = new HandlerThread(loginRunnable);
                 //Toast.makeText(getActivity(), "登陆", Toast.LENGTH_SHORT).show();
-                loginThread = new HandlerThread("loginThread");
-                loginThread.start();
-                handler = new Handler(loginThread.getLooper());
-                handler.post(loginRunnable);
+                if (getName().equals("")) {
+                    mEtName.setError("记得输入用户名");
+                } else if (getPassword().equals("")) {
+                    mEtPwd.setError("密码不能为空");
+                } else {
+                    loginThread = new HandlerThread("loginThread");
+                    loginThread.start();
+                    handler = new Handler(loginThread.getLooper());
+                    handler.post(loginRunnable);
+                }
                 break;
             //忘记密码事件
             case R.id.tv_forget_pwd:
@@ -93,6 +98,7 @@ public class LoginFragment extends BaseFragment implements LoginView {
                 getHoldingActivity().finish();
                 break;
         }
+
     }
 
     @Override
@@ -107,12 +113,12 @@ public class LoginFragment extends BaseFragment implements LoginView {
 
     @Override
     public String getName() {
-        return mEtName.getText().toString();
+        return mEtName.getText().toString().trim();
     }
 
     @Override
     public String getPassword() {
-        return mEtPwd.getText().toString();
+        return mEtPwd.getText().toString().trim();
     }
 
     @Override

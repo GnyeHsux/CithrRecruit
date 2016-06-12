@@ -32,7 +32,6 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
     private LinearLayoutManager mLinearLayoutManager;
 
     private List<String> mData;
-    private int count = 10;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {

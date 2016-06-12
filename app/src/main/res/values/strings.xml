@@ -46,4 +46,11 @@
     <string name="title_user_info">个人信息</string>
     <string name="user_info_save">保存</string>
     <string name="title_job_info">职位详情</string>
+
+    <string name="namespace">http://tempuri.org/</string>
+    <string name="wsdl_login_and_registe">http://58.215.179.167/LoginAndRegiste.asmx?WSDL</string>
+    <string name="method_login">MyLogin</string>
+    <string name="result_login">MyLoginResult</string>
+    <string name="method_register">UserRegister</string>
+    <string name="result_register">UserRegisterResult</string>
 </resources>
