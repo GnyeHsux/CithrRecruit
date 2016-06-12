@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include
+        layout="@layout/app_bar_main"/>
+
+    <include
+        layout="@layout/cardview_company"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/company_url"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:text="公司网址："
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_companyUrl"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="www.huawei.com"/>
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="公司简介"
+            android:textColor="@color/black"/>
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="5dp"
+            android:background="@color/bg_gray"/>
+
+        <WebView
+            android:id="@+id/webView_CompanyIntroduce"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="公司地址"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_companyAddress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="无锡崇安广益路291号A栋1519室"/>
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp">
+
+        <TextView
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="联系方式"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_contact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv"
+            android:text="联系人："
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_companyContact"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv"
+            android:layout_toRightOf="@+id/tv_contact"
+            android:text="谢经理"/>
+
+        <TextView
+            android:id="@+id/tv_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_contact"
+            android:text="手机："
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/tv_m"
+            android:id="@+id/tv_mobile"
+            android:layout_below="@+id/tv_contact"
+            android:text="18851518829"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:text="公司邮箱："
+            android:layout_below="@id/tv_m"
+            android:textColor="@color/black"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_e"/>
+
+        <TextView
+            android:layout_toRightOf="@+id/tv_e"
+            android:layout_below="@+id/tv_m"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/tv_email"
+            android:text="jjds@126.com"
+            />
+
+    </RelativeLayout>
+</LinearLayout>

@@ -26,7 +26,7 @@
         android:paddingLeft="@dimen/rv_item_paddingLeft"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="15dp"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <LinearLayout
@@ -41,15 +41,14 @@
                 android:layout_weight="1"
                 android:text="产品经理"
                 android:textColor="@android:color/black"
-                android:textSize="@dimen/text_size_large"/>
+                android:textSize="@dimen/text_size_normal"/>
 
             <TextView
                 android:id="@+id/item_tv_workLocation"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="北京"
-                android:textSize="@dimen/text_size_normal"/>
+                android:text="北京"/>
         </LinearLayout>
 
         <LinearLayout

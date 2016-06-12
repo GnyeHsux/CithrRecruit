@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v7.widget.CardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cardView_company"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="15dp"
+    android:clickable="true"
+    android:foreground="?android:attr/selectableItemBackground"
+    app:cardCornerRadius="1dp">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/img_CompanyLogo"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginRight="10dp"
+            android:src="@drawable/xsy"
+            />
+
+        <TextView
+            android:id="@+id/tv_CmpanyName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignLeft="@+id/tv_IndustryName"
+            android:layout_alignStart="@+id/tv_IndustryName"
+            android:layout_marginTop="12dp"
+            android:text="九九鼎盛营销策划有限公司"
+            android:textColor="@color/black"/>
+
+        <TextView
+            android:id="@+id/tv_IndustryName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_CmpanyName"
+            android:layout_toRightOf="@+id/img_CompanyLogo"
+            android:text="IT公司"/>
+
+        <TextView
+            android:id="@+id/tv_companyNatureName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_CmpanyName"
+            android:layout_toRightOf="@+id/tv_IndustryName"
+            android:paddingLeft="10dp"
+            android:text="民营公司"/>
+
+        <TextView
+            android:id="@+id/tv_CompanySizeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tv_CmpanyName"
+            android:layout_toRightOf="@+id/tv_companyNatureName"
+            android:paddingLeft="10dp"
+            android:text="20-50人"/>
+
+    </RelativeLayout>
+</android.support.v7.widget.CardView>
