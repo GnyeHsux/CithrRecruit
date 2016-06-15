@@ -34,4 +34,14 @@
         android:layout_below="@+id/tab_layout"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
+    <cn.cithr.jackdraw.cithrrecruit.ui.common.HintSearchBox
+        android:id="@+id/searchbox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:layout_marginTop="-6dp"
+        android:layout_marginLeft="-6dp"
+        android:layout_marginRight="-6dp"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"/>
 </RelativeLayout>
