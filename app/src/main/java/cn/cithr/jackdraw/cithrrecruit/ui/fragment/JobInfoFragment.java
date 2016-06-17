@@ -3,17 +3,14 @@ package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 import android.os.Bundle;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
-import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.webkit.WebView;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
-import cn.cithr.jackdraw.cithrrecruit.ui.activity.MainActivity;
 
 /**
  * Created by xusha on 2016/6/11.
@@ -26,11 +23,13 @@ public class JobInfoFragment extends BaseFragment {
     @BindView(R.id.cardView_company)
     CardView mCardViewCompany;
 
+    public static JobInfoFragment newIntance() {
+        return new JobInfoFragment();
+    }
+
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-
-        MainActivity.isLockDrawer(true);    //禁止主页面抽屉侧滑
 
         mCardViewCompany.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,17 +57,5 @@ public class JobInfoFragment extends BaseFragment {
         return R.layout.fragment_jobinfo;
     }
 
-    @Override
-    public void onDestroy() {
-        super.onDestroy();
-        MainActivity.isLockDrawer(false);   //打开主页面抽屉侧滑
-    }
 
-    @Override
-    public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        // TODO: inflate a fragment view
-        View rootView = super.onCreateView(inflater, container, savedInstanceState);
-        ButterKnife.bind(this, rootView);
-        return rootView;
-    }
 }

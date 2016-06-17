@@ -1,5 +1,6 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.LinearLayoutManager;
@@ -12,6 +13,7 @@ import java.util.List;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
+import cn.cithr.jackdraw.cithrrecruit.ui.activity.JobInfoActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.adapter.EndLessOnScrollListener;
 import cn.cithr.jackdraw.cithrrecruit.ui.adapter.JobListAdapter;
 import cn.cithr.jackdraw.cithrrecruit.ui.widget.RecyclerViewClickListener;
@@ -60,7 +62,8 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
             public void onItemClick(View view, int position) {
                 if (position != -1) {       //莫名其妙的bug
                     //传入职位id
-                    addFragment(new JobInfoFragment());
+                    Intent intent = new Intent(getHoldingActivity(), JobInfoActivity.class);
+                    startActivity(intent);
                 }
             }
         }));
