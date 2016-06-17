@@ -3,11 +3,15 @@ package cn.cithr.jackdraw.cithrrecruit.ui.activity;
 import android.annotation.TargetApi;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.Handler;
+import android.os.Looper;
 import android.support.design.widget.FloatingActionButton;
 import android.transition.Fade;
 import android.transition.Transition;
 import android.transition.TransitionInflater;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
 
 import butterknife.BindView;
@@ -101,7 +105,12 @@ public class CreateResumeActivity extends AppActivity {
 
     //显示控件
     private void initViews() {
-
+        new Handler(Looper.getMainLooper()).post(() -> {
+            Animation animation = AnimationUtils.loadAnimation(this, android.R.anim.fade_in);
+            animation.setDuration(300);
+//            mFab.setAnimation(animation);
+//            mFab.setVisibility(View.VISIBLE);
+        });
     }
 
 
