@@ -1,20 +1,15 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 
 import android.app.Activity;
-import android.content.IntentFilter;
 import android.os.Bundle;
-import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.Toolbar;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import cn.cithr.jackdraw.cithrrecruit.app.MyApplication;
-import cn.cithr.jackdraw.cithrrecruit.receiver.NetworkChangeReceiver;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.BaseActivity;
-import cn.cithr.jackdraw.cithrrecruit.ui.activity.MainActivity;
 import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 
@@ -81,10 +76,10 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     @Override
     public void onClick(View view) {
         app = (MyApplication) getContext().getApplicationContext();
-        if(app.getIsNetwork()){
+        if (app.getIsNetwork()) {
             myOnClickListener.myOnClick(view);
-        }else{
-            ToastUtils.makeShortText("网络连接失败,请检查你的网络设置",getHoldingActivity());
+        } else {
+            ToastUtils.makeShortText("网络连接失败,请检查你的网络设置", getHoldingActivity());
         }
     }
 

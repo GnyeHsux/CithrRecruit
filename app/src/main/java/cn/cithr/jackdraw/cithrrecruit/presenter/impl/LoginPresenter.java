@@ -15,7 +15,7 @@ public class LoginPresenter implements OnLoginListener {
     private LoginView mLoginView;
     private Context mContext;
 
-    public LoginPresenter(Context context,LoginView loginView){
+    public LoginPresenter(Context context, LoginView loginView) {
         this.mLoginView = loginView;
         this.mContext = context;
         this.mLoginModel = new LoginModelImpl();
@@ -39,6 +39,6 @@ public class LoginPresenter implements OnLoginListener {
 
     @Override
     public void onLogin() {
-        mLoginModel.loginModel(mContext,mLoginView.getName(),mLoginView.getPassword(),this);
+        mLoginModel.loginModel(mContext, mLoginView.getName(), mLoginView.getPassword(), this);
     }
 }

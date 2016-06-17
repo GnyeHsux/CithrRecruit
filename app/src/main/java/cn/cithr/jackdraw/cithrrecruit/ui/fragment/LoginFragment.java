@@ -13,13 +13,11 @@ import android.widget.Toast;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
-import butterknife.OnClick;
 import cn.cithr.jackdraw.cithrrecruit.R;
 import cn.cithr.jackdraw.cithrrecruit.presenter.impl.LoginPresenter;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.MainActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.RegisterActivity;
 import cn.cithr.jackdraw.cithrrecruit.ui.view.LoginView;
-import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 /**
  * Created by xusha on 2016/5/23.
@@ -60,6 +58,10 @@ public class LoginFragment extends BaseFragment implements LoginView, BaseFragme
         setToolbar(mToolbar, R.string.title_login);
         loginPresenter = new LoginPresenter(view.getContext(), this);
         mBtnLogin.setOnClickListener(this);
+        mTvForgetPwd.setOnClickListener(this);
+        mTvRegister.setOnClickListener(this);
+        mTvGotoHome.setOnClickListener(this);
+        this.setMyOnClickListener(this);
     }
 
     @Override
@@ -104,6 +106,7 @@ public class LoginFragment extends BaseFragment implements LoginView, BaseFragme
 
     @Override
     public void moveToIndex() {
+        getHoldingActivity().finish();
         startActivity(new Intent(getHoldingActivity(), MainActivity.class));
     }
 

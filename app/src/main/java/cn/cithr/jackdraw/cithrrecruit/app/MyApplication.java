@@ -28,16 +28,17 @@ public class MyApplication extends Application {
         this.jsonData = jsonData;
     }
 
-    public boolean getIsNetwork(){
+    public boolean getIsNetwork() {
         return isNetwork;
     }
 
-    public void setIsNetwork(boolean network){
+    public void setIsNetwork(boolean network) {
         this.isNetwork = network;
     }
 
     public void registerNetworkReceiver() {
         IntentFilter intentFilter = new IntentFilter();
+        intentFilter.addAction("android.net.conn.CONNECTIVITY_CHANGE");
         networkChangeReceiver = new NetworkChangeReceiver();
         registerReceiver(networkChangeReceiver, intentFilter);
     }

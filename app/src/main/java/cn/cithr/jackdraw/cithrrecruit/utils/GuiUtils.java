@@ -68,7 +68,7 @@ public class GuiUtils {
         int initialRadius = view.getWidth();
         // 与入场动画的区别就是圆圈起始和终止的半径相反
         Animator anim = ViewAnimationUtils.createCircularReveal(view, cx, cy, initialRadius, finalRadius);
-        anim.setDuration(200);
+        anim.setDuration(250);
         anim.setInterpolator(new AccelerateDecelerateInterpolator());
         anim.addListener(new AnimatorListenerAdapter() {
             @Override
