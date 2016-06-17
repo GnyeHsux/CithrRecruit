@@ -22,7 +22,8 @@ import cn.cithr.jackdraw.cithrrecruit.ui.fragment.MainFragment;
 public class MainActivity extends AppActivity implements NavigationView.OnNavigationItemSelectedListener {
     @BindView(R.id.nav_view)
     NavigationView mNavigationView;
-    private static DrawerLayout mDrawerLayout;
+    @BindView(R.id.drawer_layout)
+    DrawerLayout mDrawerLayout;
     boolean isLogin = false;
     int mCurrentMenuItem;
 
@@ -35,7 +36,6 @@ public class MainActivity extends AppActivity implements NavigationView.OnNaviga
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         ButterKnife.bind(this);
 
         //添加主页面Fragment
@@ -111,11 +111,4 @@ public class MainActivity extends AppActivity implements NavigationView.OnNaviga
         }
     }
 
-    public static void isLockDrawer(boolean isLock) {
-        if (isLock) {
-            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_LOCKED_CLOSED);//关闭手势滑动
-        } else {
-            mDrawerLayout.setDrawerLockMode(DrawerLayout.LOCK_MODE_UNDEFINED); //打开手势滑动
-        }
-    }
 }

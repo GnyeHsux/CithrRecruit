@@ -5,12 +5,9 @@
     android:id="@+id/cardView"
     android:layout_width="match_parent"
     android:layout_height="@dimen/rv_item_home_height"
-    android:layout_marginLeft="@dimen/rv_item_margin"
-    android:layout_marginRight="@dimen/rv_item_margin"
     android:layout_marginTop="@dimen/rv_item_margin"
     android:clickable="true"
-    android:foreground="?android:attr/selectableItemBackground"
-    app:cardCornerRadius="1dp">
+    android:foreground="?android:attr/selectableItemBackground">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_gravity="center_vertical"

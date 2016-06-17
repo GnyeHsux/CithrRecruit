@@ -18,15 +18,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     //添加fragment
     public void addFragment(BaseFragment fragment) {
         if (fragment != null) {
-//            if (fragment.getClass() != MainFragment.class) {
-//                getSupportFragmentManager().beginTransaction()
-//                        .setCustomAnimations(
-//                                R.anim.fragment_slide_right_in,
-//                                R.anim.fragment_slide_left_out,
-//                                R.anim.fragment_slide_left_in,
-//                                R.anim.fragment_slide_right_out
-//                                );
-//            }
+
             getSupportFragmentManager().beginTransaction()
                     .replace(getFragmentContentId(), fragment, fragment.getClass().getSimpleName())
                     .addToBackStack(fragment.getClass().getSimpleName())

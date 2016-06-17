@@ -17,5 +17,6 @@
     <dimen name="item_hight">30dp</dimen>
     <dimen name="rv_item_paddingLeft">60dp</dimen>
     <dimen name="rv_item_img_width">60dp</dimen>
-    <dimen name="rv_item_margin">6dp</dimen>
+    <dimen name="rv_item_margin">0.5dp</dimen>
+    <dimen name="rv_item_resume_height">80dp</dimen>
 </resources>

@@ -6,7 +6,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 import cn.cithr.jackdraw.cithrrecruit.R;
-import cn.cithr.jackdraw.cithrrecruit.ui.fragment.TabCVFragment;
+import cn.cithr.jackdraw.cithrrecruit.ui.fragment.TabResumeFragment;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.TabFindFragment;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.TabHomeFragment;
 
@@ -32,7 +32,7 @@ public class SimpleFragmentPagerAdapter extends FragmentPagerAdapter {
                 fragment = new TabHomeFragment();
                 break;
             case 1:
-                fragment = new TabCVFragment();
+                fragment = new TabResumeFragment();
                 break;
             case 2:
                 fragment = new TabFindFragment();
