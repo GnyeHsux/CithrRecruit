@@ -14,6 +14,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.JobInfoActivity;
+import cn.cithr.jackdraw.cithrrecruit.ui.adapter.DividerItemDecoration;
 import cn.cithr.jackdraw.cithrrecruit.ui.adapter.EndLessOnScrollListener;
 import cn.cithr.jackdraw.cithrrecruit.ui.adapter.JobListAdapter;
 import cn.cithr.jackdraw.cithrrecruit.ui.widget.RecyclerViewClickListener;
@@ -52,7 +53,7 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
         mLinearLayoutManager = new LinearLayoutManager(getHoldingActivity());
         mRecyclerView.setLayoutManager(mLinearLayoutManager);
 
-
+        mRecyclerView.addItemDecoration(new DividerItemDecoration(getHoldingActivity(), DividerItemDecoration.VERTICAL_LIST));
         mRecyclerView.setAdapter(mAdapter);
         mRefreshLayout.setOnRefreshListener(this);
 

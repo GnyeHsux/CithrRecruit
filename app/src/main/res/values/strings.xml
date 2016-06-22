@@ -57,4 +57,8 @@
     <string name="result_login">MyLoginResult</string>
     <string name="method_register">UserRegister</string>
     <string name="result_register">UserRegisterResult</string>
+    <string name="preview_resume">预览</string>
+    <string name="title_create_resume">创建简历</string>
+    <string name="title_education">教育经历</string>
+    <string name="title_work_experience">工作经历</string>
 </resources>

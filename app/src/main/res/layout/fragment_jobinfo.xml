@@ -1,215 +1,220 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
     android:orientation="vertical">
 
     <include
         layout="@layout/app_bar_main"/>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="20dp">
+        android:layout_height="wrap_content">
 
-        <TextView
-            android:id="@+id/tv_jobCompanyName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="产品经理"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_large"/>
-
-        <TextView
-            android:id="@+id/tv_jobSlaryName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="8k-12k"
-            android:textColor="@color/red"
-            />
-
-        <TextView
-            android:id="@+id/tv_jobPublishDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:gravity="right"
-            android:text="06-13"/>
-    </LinearLayout>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="20dp">
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:src="@drawable/work_location_img"/>
-
-        <TextView
-            android:id="@+id/tv_jobCityName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="长沙"/>
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/work_year_img"
-            />
-
-        <TextView
-            android:id="@+id/tv_jobWorkYears"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="1-3年"/>
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/degree_img"
-            />
-
-        <TextView
-            android:id="@+id/tv_jobDegreeName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="本科"/>
-
-        <ImageView
-            android:layout_width="15dp"
-            android:layout_height="15dp"
-            android:layout_marginLeft="10dp"
-            android:src="@drawable/time_img"
-            />
-
-        <TextView
-            android:id="@+id/tv_jobNatureName"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginLeft="5dp"
-            android:text="全职"/>
-    </LinearLayout>
-
-    <include
-        layout="@layout/cardview_company"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="10dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="职位描述"
-            android:textColor="@color/black"/>
-
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:layout_margin="5dp"
-            android:background="@color/bg_gray"/>
-
-        <WebView
-            android:id="@+id/webView_jobRequirements"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="5dp"
-        android:background="@color/bg_gray"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="公司地址："
-            android:textColor="@color/black"/>
-
-        <TextView
-            android:id="@+id/tv_jobCompanyAddress"
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="无锡崇安广益路291号A栋1519室"
-            />
+            android:layout_margin="20dp">
 
-    </LinearLayout>
+            <!--第一层-->
+            <TextView
+                android:id="@+id/tv_jobCompanyName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="产品经理"
+                android:textColor="@color/black"
+                android:textSize="@dimen/text_size_large"/>
 
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="1dp"
-        android:layout_margin="5dp"
-        android:background="@color/bg_gray"/>
+            <TextView
+                android:id="@+id/tv_jobSlaryName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_jobCompanyName"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/tv_jobCompanyName"
+                android:text="8k-12k"
+                android:textColor="@color/red"
+                />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="5dp"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+            <TextView
+                android:id="@+id/tv_jobPublishDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_jobCompanyName"
+                android:layout_alignParentRight="true"
+                android:layout_weight="1"
+                android:gravity="right"
+                android:text="06-13"/>
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="公司联系人："
-            android:textColor="@color/black"/>
+            <!--第二层-->
+            <ImageView
+                android:id="@+id/img_location"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_below="@+id/tv_jobCompanyName"
+                android:layout_marginTop="20dp"
+                android:src="@drawable/work_location_img"/>
 
-        <TextView
-            android:id="@+id/tv_jobCompanyIntrodce"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="施迪健"/>
-    </LinearLayout>
+            <TextView
+                android:id="@+id/tv_jobCityName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_location"
+                android:text="长沙"/>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp">
+            <ImageView
+                android:id="@+id/img_work_years"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@id/tv_jobCityName"
+                android:src="@drawable/work_year_img"
+                />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="联系方式："
-            android:textColor="@color/black"/>
+            <TextView
+                android:id="@+id/tv_jobWorkYears"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@id/img_work_years"
+                android:text="1-3年"/>
 
-        <TextView
-            android:id="@+id/tv_jobContact"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="13580113501"/>
-    </LinearLayout>
+            <ImageView
+                android:id="@+id/img_degree"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_jobWorkYears"
+                android:src="@drawable/degree_img"
+                />
 
-    <Button
-        android:id="@+id/btn_applyJob"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:background="@color/colorPrimary"
-        android:text="发送简历"
-        android:textColor="@color/white"
-        android:textSize="@dimen/text_size_normal"/>
+            <TextView
+                android:id="@+id/tv_jobDegreeName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_degree"
+                android:text="本科"/>
+
+            <ImageView
+                android:id="@+id/img_jobNature"
+                android:layout_width="15dp"
+                android:layout_height="15dp"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/tv_jobDegreeName"
+                android:src="@drawable/time_img"
+                />
+
+            <TextView
+                android:id="@+id/tv_jobNatureName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/img_location"
+                android:layout_marginLeft="5dp"
+                android:layout_toRightOf="@+id/img_jobNature"
+                android:text="全职"/>
+
+            <include
+                android:id="@+id/include"
+                layout="@layout/cardview_company"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/img_location"
+                android:layout_marginTop="15dp"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/include"
+                android:layout_marginTop="15dp"
+                android:text="职位描述："
+                android:textColor="@color/black"/>
+
+            <WebView
+                android:id="@+id/webView_jobRequirements"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/include"
+                android:layout_marginTop="40dp"/>
+
+            <TextView
+                android:id="@+id/tv_companyContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/webView_jobRequirements"
+                android:layout_marginTop="10dp"
+                android:text="公司联系人："
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_jobCompanyIntrodce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_companyContact"
+                android:layout_toRightOf="@+id/tv_companyContact"
+                android:text="施迪健"/>
+
+
+            <TextView
+                android:id="@+id/tv_contact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_companyContact"
+                android:layout_marginTop="5dp"
+                android:text="联系方式："
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_jobContact"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_contact"
+                android:layout_toRightOf="@+id/tv_contact"
+                android:text="13580113501"/>
+
+            <TextView
+                android:id="@id/tv_companyAddress"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/tv_contact"
+                android:layout_marginTop="5dp"
+                android:text="公司地址："
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:id="@+id/tv_jobCompanyAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_alignBottom="@+id/tv_companyAddress"
+                android:layout_toRightOf="@id/tv_companyAddress"
+                android:text="无锡崇安广益路291号A栋1519室"
+                />
+
+            <Button
+                android:id="@+id/btn_applyJob"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/tv_companyAddress"
+                android:layout_marginBottom="40dp"
+                android:layout_marginTop="20dp"
+                android:background="@color/colorPrimary"
+                android:text="发送简历"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size_normal"/>
+
+        </RelativeLayout>
+
+    </ScrollView>
 
 </LinearLayout>

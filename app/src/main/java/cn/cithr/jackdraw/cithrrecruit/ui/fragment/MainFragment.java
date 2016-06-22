@@ -26,7 +26,8 @@ import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
  */
 public class MainFragment extends BaseFragment {
     private static final int SEARCH_HISTORY_SIZE = 5;   //搜索数量
-
+    @BindView(R.id.toolbar)
+    Toolbar mToolbar;
     @BindView(R.id.tab_layout)
     TabLayout mTabLayout;
 
@@ -50,11 +51,10 @@ public class MainFragment extends BaseFragment {
     protected void initView(View view, Bundle savedInstanceState) {
 
         ButterKnife.bind(this, view);
-
-        Toolbar toolbar = (Toolbar) view.findViewById(R.id.toolbar);
-        toolbar.setTitle(R.string.home_name);
-        toolbar.inflateMenu(R.menu.main);
-        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+        //初始化Toolbar
+        mToolbar.setTitle(R.string.home_name);
+        mToolbar.inflateMenu(R.menu.main);
+        mToolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
                 int id = item.getItemId();
@@ -73,7 +73,7 @@ public class MainFragment extends BaseFragment {
                 return false;
             }
         });
-        ((MainActivity) getActivity()).setToolBar(toolbar);
+        ((MainActivity) getActivity()).setToolBar(mToolbar);
 
         setupViewPager();
 

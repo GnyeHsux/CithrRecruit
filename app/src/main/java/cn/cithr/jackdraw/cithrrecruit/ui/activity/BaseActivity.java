@@ -1,14 +1,14 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.activity;
 
-import android.support.v7.app.AppCompatActivity;
 import android.view.KeyEvent;
 
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.BaseFragment;
+import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
 
 /**
  * Created by xusha on 2016/5/24.
  */
-public abstract class BaseActivity extends AppCompatActivity {
+public abstract class BaseActivity extends SwipeBackActivity {
     //布局文件ID
     protected abstract int getContentViewId();
 

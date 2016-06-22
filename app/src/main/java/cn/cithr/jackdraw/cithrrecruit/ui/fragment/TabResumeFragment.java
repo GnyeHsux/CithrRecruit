@@ -18,6 +18,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.CreateResumeActivity;
+import cn.cithr.jackdraw.cithrrecruit.ui.adapter.DividerItemDecoration;
 import cn.cithr.jackdraw.cithrrecruit.ui.adapter.ResumeListAdapter;
 import cn.cithr.jackdraw.cithrrecruit.ui.widget.RecyclerViewClickListener;
 import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
@@ -47,6 +48,8 @@ public class TabResumeFragment extends BaseFragment implements SwipeRefreshLayou
 
         mAdapter = new ResumeListAdapter(getHoldingActivity(), mData);
         mLinearLayoutManager = new LinearLayoutManager(getHoldingActivity());
+
+        mRecyclerview.addItemDecoration(new DividerItemDecoration(getHoldingActivity(), DividerItemDecoration.VERTICAL_LIST));
         mRecyclerview.setLayoutManager(mLinearLayoutManager);
         mRecyclerview.setAdapter(mAdapter);
 
@@ -61,9 +64,11 @@ public class TabResumeFragment extends BaseFragment implements SwipeRefreshLayou
         mRecyclerview.addOnItemTouchListener(new RecyclerViewClickListener(getHoldingActivity(), mRecyclerview, new RecyclerViewClickListener.OnItemClickListener() {
             @Override
             public void onItemClick(View view, int position) {
-                //打开简历页面
-                TextView textView = (TextView) view.findViewById(R.id.rv_item_resumName);
-                ToastUtils.showShort(getHoldingActivity(), textView.getText().toString());
+                //传入简历id，打开简历页面
+                if (position != -1) {
+                    TextView textView = (TextView) view.findViewById(R.id.rv_item_resumName);
+                    ToastUtils.showShort(getActivity(), textView.getText().toString());
+                }
             }
         }));
 
