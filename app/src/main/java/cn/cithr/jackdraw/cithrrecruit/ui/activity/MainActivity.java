@@ -38,10 +38,11 @@ public class MainActivity extends AppActivity implements NavigationView.OnNaviga
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
 
-        setSwipeBackEnable(false);
+        //setSwipeBackEnable(false);
+        getSwipeBackLayout().setEnableGesture(false);
 
         //添加主页面Fragment
-        this.addFragment(new MainFragment());
+        this.addFragment(null, new MainFragment());
 
         mNavigationView.setNavigationItemSelectedListener(this);
     }

@@ -72,14 +72,14 @@ public class GuiUtils {
             @Override
             public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
-                //view.setBackgroundColor(ContextCompat.getColor(context, color));
+                //view.setBackgroundColor(ContextCompat.getColor(context, R.color.colorPrimary));
             }
 
             @Override
             public void onAnimationEnd(Animator animation) {
                 super.onAnimationEnd(animation);
-                view.setVisibility(View.INVISIBLE);
                 listener.onRevealHide();
+                view.setVisibility(View.INVISIBLE);
             }
         });
         anim.start();

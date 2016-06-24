@@ -90,7 +90,7 @@ public class LoginFragment extends BaseFragment implements LoginView, BaseFragme
                 break;
             //忘记密码事件
             case R.id.tv_forget_pwd:
-                addFragment(new ForgotPwdFragment());
+                addFragment(this, new ForgotPwdFragment());
                 break;
             //注册事件
             case R.id.tv_register:

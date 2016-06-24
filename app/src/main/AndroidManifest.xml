@@ -38,6 +38,12 @@
         <activity android:name=".ui.activity.EducationActivity"/>
 
         <activity android:name=".ui.activity.WorkExperienceActivity"/>
+
+        <activity android:name=".ui.activity.LanguageAbilityActivity"/>
+
+        <activity android:name=".ui.activity.JobObjectiveActivity"/>
+
+        <activity android:name=".ui.activity.TrainExperienceActivity"/>
     </application>
 
 </manifest>

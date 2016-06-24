@@ -3,10 +3,10 @@
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/rl_container"
-    android:fitsSystemWindows="true"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary">
+    android:background="@color/colorPrimary"
+    android:fitsSystemWindows="true">
 
     <include
         android:id="@+id/include"
@@ -50,6 +50,7 @@
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
+
             <View
                 android:layout_width="match_parent"
                 android:layout_height="0.5dp"
@@ -61,36 +62,31 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:onClick="goToEducation"
-                android:text="教育经历"
+                android:onClick="goToJobObjective"
+                android:text="求职意向"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/bg_gray"
-                />
-
-            <TextView
-                android:id="@+id/tv_work_experience"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="工作经历"
-                android:onClick="goToWorkExperience"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
+
+    <TextView
+        android:visibility="invisible"
+        android:id="@+id/textview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/cardView1"
+        android:layout_marginLeft="15dp"
+        android:text="选填："
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size_normal"/>
 
     <android.support.v7.widget.CardView
         android:id="@+id/cardView2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/cardView1"
+        android:layout_below="@+id/textview"
         android:layout_marginLeft="15dp"
         android:layout_marginRight="15dp"
         android:layout_marginTop="5dp"
@@ -108,8 +104,41 @@
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="培训经历"
+                android:onClick="goToEducation"
+                android:text="教育经历"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_gray"
+                />
+
+            <TextView
+                android:id="@+id/tv_work_experience"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:onClick="goToWorkExperience"
+                android:text="工作经历"
+                android:textColor="@color/black"
+                android:textSize="18sp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/bg_gray"
+                />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
                 android:onClick="goToTrainExperience"
+                android:text="培训经历"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
@@ -124,70 +153,25 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
-                android:text="求职意向"
-                android:onClick="goToJobObjective"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
-
-        </LinearLayout>
-    </android.support.v7.widget.CardView>
-
-    <android.support.v7.widget.CardView
-        android:id="@+id/cardView3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/cardView2"
-        android:layout_marginLeft="15dp"
-        android:layout_marginRight="15dp"
-        android:layout_marginTop="20dp"
-        android:visibility="invisible"
-        app:cardCornerRadius="1dp"
-        app:cardElevation="3dp"
-        >
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="13dp"
-            android:orientation="vertical">
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="语言能力"
                 android:onClick="goToLanguageAbility"
-                android:textColor="@color/black"
-                android:textSize="18sp"/>
-
-            <View
-                android:layout_width="match_parent"
-                android:layout_height="0.5dp"
-                android:layout_marginTop="5dp"
-                android:background="@color/bg_gray"
-                />
-
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="5dp"
-                android:text="个人技能"
+                android:text="语言能力"
                 android:textColor="@color/black"
                 android:textSize="18sp"/>
 
         </LinearLayout>
     </android.support.v7.widget.CardView>
 
-    <android.support.v7.widget.AppCompatCheckBox
+    <Switch
         android:id="@+id/switch_isOpen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
-        android:layout_above="@+id/cardView1"
-        android:layout_margin="10dp"
+        android:layout_below="@+id/cardView2"
+        android:layout_margin="15dp"
         android:checked="true"
-        android:visibility="invisible"
         android:text="公开简历"
         android:textColor="@color/white"
+        android:visibility="invisible"
         />
 
     <android.support.design.widget.FloatingActionButton
@@ -195,7 +179,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
+        android:layout_centerInParent="true"
         android:layout_margin="16dp"
         android:src="@mipmap/done"
         android:transitionName="@string/other_transition_name"

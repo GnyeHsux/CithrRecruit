@@ -44,8 +44,9 @@ public abstract class AppActivity extends BaseActivity {
         //避免重复添加Fragment
         if (null == getSupportFragmentManager().getFragments()) {
             BaseFragment firstFragment = getFirstFragment();
+            //Fragment fragment = new Fragment();
             if (null != firstFragment) {
-                addFragment(firstFragment);
+                addFragment(null, firstFragment);
             }
         }
 

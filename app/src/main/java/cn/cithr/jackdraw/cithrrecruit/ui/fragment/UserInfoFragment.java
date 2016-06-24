@@ -1,67 +1,67 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 
-import android.app.DatePickerDialog;
-import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatEditText;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.text.InputType;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.View;
-import android.widget.DatePicker;
+import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.TextView;
-
-import java.util.Calendar;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
-import cn.cithr.jackdraw.cithrrecruit.ui.adapter.DividerItemDecoration;
-import cn.cithr.jackdraw.cithrrecruit.ui.adapter.UserInfoAdapter;
-import cn.cithr.jackdraw.cithrrecruit.ui.widget.RecyclerViewClickListener;
-import cn.cithr.jackdraw.cithrrecruit.utils.RegexUtils;
-import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 
 /**
  * Created by xusha on 2016/5/25.
  */
-public class UserInfoFragment extends BaseFragment {
-    @BindView(R.id.rv_user_info)
-    RecyclerView mRecyclerView;
+public class UserInfoFragment extends BaseFragment implements BaseFragment.MyOnClickListener {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
-
-    RecyclerView.LayoutManager mLayoutManager;
-    UserInfoAdapter mAdapter;
+    @BindView(R.id.et_user_name)
+    EditText mEtUserName;
+    @BindView(R.id.tv_gender)
+    TextView mTvGender;
+    @BindView(R.id.tv_marriage)
+    TextView mTvMarriage;
+    @BindView(R.id.tv_birthday)
+    TextView mTvBirthday;
+    @BindView(R.id.tv_degree)
+    TextView mTvDegree;
+    @BindView(R.id.tv_polictical_status)
+    TextView mTvPolicticalStatus;
+    @BindView(R.id.tv_location)
+    TextView mTvLocation;
+    @BindView(R.id.et_workyear)
+    EditText mEtWorkyear;
+    @BindView(R.id.et_mobile)
+    EditText mEtMobile;
+    @BindView(R.id.et_email)
+    EditText mEtEmail;
+    @BindView(R.id.ll_gender)
+    LinearLayout mLlGender;
+    @BindView(R.id.ll_marriage)
+    LinearLayout mLlMarriage;
+    @BindView(R.id.ll_birthday)
+    LinearLayout mLlBirthday;
+    @BindView(R.id.ll_degree)
+    LinearLayout mLlDegree;
+    @BindView(R.id.ll_polictical_status)
+    LinearLayout mLlPolicticalStatus;
+    @BindView(R.id.ll_location)
+    LinearLayout mLlLocation;
 
     private String[] mDatas;
-    private TextView mTextView;
 
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
         ButterKnife.bind(this, view);
-
+        initClick();
+        setMyOnClickListener(this);
         //设置toolbar
         setHasOptionsMenu(true);
         setToolbar(mToolbar, R.string.title_user_info);
-
-        mLayoutManager = new LinearLayoutManager(getHoldingActivity());
-        mRecyclerView.setLayoutManager(mLayoutManager);
-        mRecyclerView.addItemDecoration(new DividerItemDecoration(getHoldingActivity(), DividerItemDecoration.VERTICAL_LIST));
-        mAdapter = new UserInfoAdapter();
-        mRecyclerView.setAdapter(mAdapter);
-        //添加Item点击事件
-        mRecyclerView.addOnItemTouchListener(new RecyclerViewClickListener(getHoldingActivity(), mRecyclerView,
-                new RecyclerViewClickListener.OnItemClickListener() {
-                    @Override
-                    public void onItemClick(final View view, int position) {
-                        showDialog(view, position);
-                    }
-                }));
     }
 
     @Override
@@ -75,104 +75,50 @@ public class UserInfoFragment extends BaseFragment {
         return R.layout.fragment_user_info;
     }
 
-    private void showDialog(final View view, int position) {
-        switch (position) {
-            //头像
-            case 0:
-                break;
-            //姓名
-            case 1:
-                initEditDialog(view, "请输入姓名");
-                break;
-            //性别
-            case 2:
+    private void initClick() {
+        mLlBirthday.setOnClickListener(this);
+        mLlDegree.setOnClickListener(this);
+        mLlGender.setOnClickListener(this);
+        mLlLocation.setOnClickListener(this);
+        mLlMarriage.setOnClickListener(this);
+        mLlPolicticalStatus.setOnClickListener(this);
+    }
+
+    @Override
+    public void myOnClick(View view) {
+        switch (view.getId()) {
+            case R.id.ll_gender:
                 mDatas = new String[]{"男", "女"};
-                initDialog(view);
+                showDialog(mDatas, mTvGender);
                 break;
-            //婚姻状况
-            case 3:
+
+            case R.id.ll_marriage:
                 mDatas = new String[]{"已婚", "未婚"};
-                initDialog(view);
+                showDialog(mDatas, mTvMarriage);
                 break;
-            //出生日期
-            case 4:
-                Calendar c = Calendar.getInstance();
-                //日期对话框，选择日期
-                new DatePickerDialog(getHoldingActivity(),
-                        new DatePickerDialog.OnDateSetListener() {
-                            @Override
-                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
-                                mTextView.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
-                            }
-                        }
-                        , c.get(Calendar.YEAR)
-                        , c.get(Calendar.MONTH)
-                        , c.get(Calendar.DAY_OF_MONTH)
-                ).show();
+
+            case R.id.ll_birthday:
+                showDateSelectDialog(mTvBirthday);
                 break;
-            //最高学历
-            case 5:
+
+            case R.id.ll_degree:
                 mDatas = new String[]{"小学", "初中", "高中", "本科", "硕士", "博士"};
-                initDialog(view);
+                showDialog(mDatas, mTvDegree);
                 break;
-            //工作年限
-            case 6:
-                initEditDialog(view, "请输入工作年限");
-                break;
-            //手机号码
-            case 7:
-                initEditDialog(view, "请输入手机号码");
-                break;
-            //现居地
-            case 8:
-                mDatas = new String[]{"广州", "深圳", "东莞", "北京", "上海", "天津"};
-                initDialog(view);
-                break;
-            //政治面貌：
-            case 9:
+
+            case R.id.ll_polictical_status:
                 mDatas = new String[]{"群众", "团员", "党员"};
-                initDialog(view);
+                showDialog(mDatas, mTvPolicticalStatus);
+                break;
+
+            case R.id.ll_location:
+                mDatas = new String[]{"广州", "深圳", "东莞", "北京", "上海", "天津"};
+                showDialog(mDatas, mTvLocation);
+                break;
+
+            default:
                 break;
         }
     }
 
-    private void initDialog(final View view) {
-        AlertDialog.Builder builder = new AlertDialog.Builder(getHoldingActivity());
-        builder.setItems(mDatas, new DialogInterface.OnClickListener() {
-            @Override
-            public void onClick(DialogInterface dialog, int which) {
-                mTextView = (TextView) view.findViewById(R.id.tv_normal_item_value);
-                mTextView.setText(mDatas[which]);
-            }
-        });
-        builder.create().show();
-    }
-
-    private void initEditDialog(final View view, String title) {
-        AppCompatEditText editText = new AppCompatEditText(getHoldingActivity());
-        if (!title.equals("请输入姓名")) {
-            editText.setInputType(InputType.TYPE_CLASS_NUMBER);
-        }
-        AlertDialog.Builder builder = new AlertDialog.Builder(getHoldingActivity());
-        builder.setTitle(title)
-                .setIcon(R.mipmap.ic_launcher)
-                .setView(editText)
-                .setCancelable(false)
-                .setPositiveButton("确定", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (title.equals("请输入手机号码")) {
-                            Boolean isTrue = RegexUtils.checkMobile(editText.getText().toString().trim());
-                            if (!isTrue) {
-                                ToastUtils.showShort(getHoldingActivity(), "手机格式不正确");
-                            }
-                        }
-                        mTextView = (TextView) view.findViewById(R.id.tv_normal_item_value);
-                        mTextView.setText(editText.getText().toString().trim());
-                        if (title.equals("请输入工作年限")) {
-                            mTextView.append("年");
-                        }
-                    }
-                }).create().show();
-    }
 }

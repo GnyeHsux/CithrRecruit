@@ -1,22 +1,30 @@
 package cn.cithr.jackdraw.cithrrecruit.ui.fragment;
 
 import android.app.Activity;
+import android.app.DatePickerDialog;
+import android.content.DialogInterface;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.widget.Toolbar;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.DatePicker;
+import android.widget.TextView;
+
+import java.util.Calendar;
 
 import cn.cithr.jackdraw.cithrrecruit.app.MyApplication;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.BaseActivity;
 import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
+import me.yokeyword.fragmentation.SwipeBackLayout;
+import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 
 /**
  * Created by xusha on 2016/5/24.
  */
-public abstract class BaseFragment extends Fragment implements View.OnClickListener {
+public abstract class BaseFragment extends SwipeBackFragment implements View.OnClickListener {
     protected BaseActivity mActivity;
     private MyApplication app;
     MyOnClickListener myOnClickListener;
@@ -38,9 +46,9 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     }
 
     //添加fragment
-    protected void addFragment(BaseFragment fragment) {
-        if (null != fragment) {
-            getHoldingActivity().addFragment(fragment);
+    protected void addFragment(BaseFragment fromFragment, BaseFragment toFragment) {
+        if (null != toFragment) {
+            getHoldingActivity().addFragment(fromFragment, toFragment);
         }
     }
 
@@ -54,7 +62,9 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
         initView(view, savedInstanceState);
-        return view;
+        // 设置滑动方向
+        getSwipeBackLayout().setEdgeOrientation(SwipeBackLayout.EDGE_RIGHT); // EDGE_LEFT(默认),EDGE_ALL
+        return attachToSwipeBack(view);
     }
 
     public void setToolbar(Toolbar toolbar, int title) {
@@ -89,5 +99,43 @@ public abstract class BaseFragment extends Fragment implements View.OnClickListe
 
     public void setMyOnClickListener(MyOnClickListener mOnClickListener) {
         this.myOnClickListener = mOnClickListener;
+    }
+
+    /**
+     * 根据datas显示选择对话框
+     *
+     * @param datas
+     * @param textView
+     */
+    public void showDialog(String[] datas, TextView textView) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(getHoldingActivity());
+        builder.setItems(datas, new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                textView.setText(datas[which]);
+            }
+        });
+        builder.create().show();
+    }
+
+    /**
+     * 显示选择日期对话框
+     *
+     * @param textView 显示选择的日期
+     */
+    public void showDateSelectDialog(TextView textView) {
+        Calendar c = Calendar.getInstance();
+        //日期对话框，选择日期
+        new DatePickerDialog(getHoldingActivity(),
+                new DatePickerDialog.OnDateSetListener() {
+                    @Override
+                    public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                        textView.setText(year + "-" + monthOfYear + "-" + dayOfMonth);
+                    }
+                }
+                , c.get(Calendar.YEAR)
+                , c.get(Calendar.MONTH)
+                , c.get(Calendar.DAY_OF_MONTH)
+        ).show();
     }
 }

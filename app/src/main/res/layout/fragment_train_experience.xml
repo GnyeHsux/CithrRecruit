@@ -13,8 +13,7 @@
         android:id="@+id/ll_start_date"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin"
-        android:layout_marginLeft="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -95,11 +94,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="公司名称"
+            android:text="培训机构名称"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
-            android:id="@+id/et_company_name"
+            android:id="@+id/et_train_org"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -114,81 +113,6 @@
         android:layout_height="0.5dp"
         android:background="@color/bg_gray"/>
 
-    <LinearLayout
-        android:id="@+id/ll_company_nature"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="公司性质"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <TextView
-            android:id="@+id/tv_company_nature"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/item_choose"
-            android:textSize="@dimen/text_size_normal"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/bg_gray"/>
-
-    <LinearLayout
-        android:id="@+id/ll_company_industry"
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:text="所属行业"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <TextView
-            android:id="@+id/tv_company_industry"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_marginRight="5dp"
-            android:singleLine="true"
-            android:textColor="@color/black"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="@string/item_choose"
-            android:textSize="@dimen/text_size_normal"
-            android:textStyle="bold"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/bg_gray"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -199,11 +123,11 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="担任职位"
+            android:text="培训课程"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
-            android:id="@+id/et_sub_function"
+            android:id="@+id/et_class_name"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -225,7 +149,7 @@
         android:textColorHint="@color/colorPrimary">
 
         <EditText
-            android:id="@+id/et_responsibility"
+            android:id="@+id/et_description"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/item_margin"
@@ -233,7 +157,7 @@
             android:layout_marginTop="@dimen/item_margin"
             android:background="@null"
             android:gravity="top"
-            android:hint="@string/work_experience_et_hint"
+            android:hint="@string/train_experience_et_hint"
             android:paddingBottom="@dimen/item_margin"
             android:paddingTop="@dimen/padding_left"/>
     </android.support.design.widget.TextInputLayout>

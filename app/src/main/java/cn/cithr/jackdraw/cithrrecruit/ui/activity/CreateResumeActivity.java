@@ -16,7 +16,7 @@ import android.os.Looper;
 import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.AppCompatCheckBox;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
@@ -28,6 +28,8 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
+import android.widget.Switch;
+import android.widget.TextView;
 
 import java.io.File;
 import java.io.FileNotFoundException;
@@ -37,7 +39,6 @@ import java.io.IOException;
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
-import cn.cithr.jackdraw.cithrrecruit.ui.fragment.BaseFragment;
 import cn.cithr.jackdraw.cithrrecruit.utils.GuiUtils;
 import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
 import de.hdodenhof.circleimageview.CircleImageView;
@@ -45,7 +46,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 /**
  * Created by xusha on 2016/6/16.
  */
-public class CreateResumeActivity extends AppActivity implements View.OnClickListener {
+public class CreateResumeActivity extends AppCompatActivity implements View.OnClickListener {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.fab)
@@ -58,18 +59,14 @@ public class CreateResumeActivity extends AppActivity implements View.OnClickLis
     CardView mCardView1;
     @BindView(R.id.cardView2)
     CardView mCardView2;
-    @BindView(R.id.cardView3)
-    CardView mCardView3;
     @BindView(R.id.switch_isOpen)
-    AppCompatCheckBox mSwitchIsOpen;
+    Switch mSwitchIsOpen;
+    @BindView(R.id.textview)
+    TextView mTextView;
 
     private Bitmap headImg;
     private static String path = Environment.getExternalStorageDirectory().getPath() + "/CithrRecruit/";// sd路径
 
-    @Override
-    protected BaseFragment getFirstFragment() {
-        return null;
-    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -111,10 +108,10 @@ public class CreateResumeActivity extends AppActivity implements View.OnClickLis
             mCardView1.setVisibility(View.VISIBLE);
             mCardView2.startAnimation(animation);
             mCardView2.setVisibility(View.VISIBLE);
-            mCardView3.startAnimation(animation);
-            mCardView3.setVisibility(View.VISIBLE);
             mSwitchIsOpen.startAnimation(animation);
             mSwitchIsOpen.setVisibility(View.VISIBLE);
+            mTextView.startAnimation(animation);
+            mTextView.setVisibility(View.VISIBLE);
         });
 
         Bitmap bt = BitmapFactory.decodeFile(path + "head.jpg");// 从SD卡中找头像，转换成Bitmap
@@ -277,11 +274,9 @@ public class CreateResumeActivity extends AppActivity implements View.OnClickLis
     @Override
     public void onBackPressed() {
         //点击Toolbar后退箭头和实体返回健，弹出提示框是否保存该简历信息
-        ToastUtils.showShort(this, "是否保存简历？");
         //提示保存简历对话框
         final AlertDialog.Builder builder = new AlertDialog.Builder(this);
         builder.setIcon(R.mipmap.ic_launcher);
-        builder.setCancelable(false);
         builder.setTitle("提示");
         builder.setMessage("是否保存简历");
         builder.setPositiveButton("保存", new DialogInterface.OnClickListener() {
@@ -401,7 +396,7 @@ public class CreateResumeActivity extends AppActivity implements View.OnClickLis
     private void setupExitAnimation() {
         Fade fade = new Fade();
         getWindow().setReturnTransition(fade);
-        fade.setDuration(300);
+        fade.setDuration(400);
     }
 
 
@@ -422,17 +417,17 @@ public class CreateResumeActivity extends AppActivity implements View.OnClickLis
 
     //转至用户培训经历界面
     public void goToTrainExperience(View view) {
-        startActivity(new Intent(this, EducationActivity.class));
+        startActivity(new Intent(this, TrainExperienceActivity.class));
     }
 
     //转至用户求职意向界面
     public void goToJobObjective(View view) {
-        startActivity(new Intent(this, EducationActivity.class));
+        startActivity(new Intent(this, JobObjectiveActivity.class));
     }
 
     //转至用户语言能力界面
     public void goToLanguageAbility(View view) {
-        startActivity(new Intent(this, EducationActivity.class));
+        startActivity(new Intent(this, LanguageAbilityActivity.class));
     }
 
 }

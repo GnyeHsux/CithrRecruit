@@ -3,7 +3,7 @@ package cn.cithr.jackdraw.cithrrecruit.ui.activity;
 import android.view.KeyEvent;
 
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.BaseFragment;
-import me.imid.swipebacklayout.lib.app.SwipeBackActivity;
+import me.yokeyword.fragmentation_swipeback.SwipeBackActivity;
 
 /**
  * Created by xusha on 2016/5/24.
@@ -16,12 +16,18 @@ public abstract class BaseActivity extends SwipeBackActivity {
     protected abstract int getFragmentContentId();
 
     //添加fragment
-    public void addFragment(BaseFragment fragment) {
-        if (fragment != null) {
-
+    public void addFragment(BaseFragment fromFragment, BaseFragment toFragment) {
+        if (fromFragment == null) {
             getSupportFragmentManager().beginTransaction()
-                    .replace(getFragmentContentId(), fragment, fragment.getClass().getSimpleName())
-                    .addToBackStack(fragment.getClass().getSimpleName())
+                    .replace(getFragmentContentId(), toFragment, toFragment.getClass().getSimpleName())
+                    .addToBackStack(toFragment.getClass().getSimpleName())
+                    .commitAllowingStateLoss();
+        } else if (toFragment != null) {
+            getSupportFragmentManager().beginTransaction()
+                    //.replace(getFragmentContentId(), fragment, fragment.getClass().getSimpleName())
+                    .add(getFragmentContentId(), toFragment, toFragment.getClass().getSimpleName())
+                    .hide(fromFragment)
+                    .addToBackStack(toFragment.getClass().getSimpleName())
                     .commitAllowingStateLoss();
         }
     }

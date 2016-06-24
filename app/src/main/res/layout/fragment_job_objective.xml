@@ -10,22 +10,21 @@
         layout="@layout/app_bar_main"/>
 
     <LinearLayout
-        android:id="@+id/ll_start_date"
+        android:id="@+id/ll_expct_industry_type"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin"
-        android:layout_marginLeft="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="开始时间"
+            android:text="期待行业"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
-            android:id="@+id/tv_start_date"
+            android:id="@+id/tv_expect_industry_type"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -49,7 +48,7 @@
         android:background="@color/bg_gray"/>
 
     <LinearLayout
-        android:id="@+id/ll_end_date"
+        android:id="@+id/ll_expect_job"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
         android:layout_margin="@dimen/item_margin">
@@ -59,11 +58,50 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="结束时间"
+            android:text="期待职位"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
-            android:id="@+id/tv_end_date"
+            android:id="@+id/tv_expect_job"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="5dp"
+            android:singleLine="true"
+            android:textColor="@color/black"
+            android:textSize="@dimen/text_size_normal"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:text="@string/item_choose"
+            android:textSize="@dimen/text_size_normal"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="0.5dp"
+        android:background="@color/bg_gray"/>
+
+
+    <LinearLayout
+        android:id="@+id/ll_expect_location"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_hight"
+        android:layout_margin="@dimen/item_margin">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"
+            android:text="期待工作地点"
+            android:textSize="@dimen/text_size_normal"/>
+
+        <TextView
+            android:id="@+id/tv_expect_location"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -87,35 +125,7 @@
         android:background="@color/bg_gray"/>
 
     <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="公司名称"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <EditText
-            android:id="@+id/et_company_name"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="right"
-            android:singleLine="true"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/bg_gray"/>
-
-    <LinearLayout
-        android:id="@+id/ll_company_nature"
+        android:id="@+id/ll_job_nature"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
         android:layout_margin="@dimen/item_margin">
@@ -125,11 +135,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="公司性质"
+            android:text="工作性质"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
-            android:id="@+id/tv_company_nature"
+            android:id="@+id/tv_job_nature"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -153,7 +163,7 @@
         android:background="@color/bg_gray"/>
 
     <LinearLayout
-        android:id="@+id/ll_company_industry"
+        android:id="@+id/ll_expect_salary"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
         android:layout_margin="@dimen/item_margin">
@@ -163,11 +173,11 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="所属行业"
+            android:text="期望薪资"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
-            android:id="@+id/tv_company_industry"
+            android:id="@+id/tv_expect_salary"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -189,35 +199,6 @@
         android:layout_width="match_parent"
         android:layout_height="0.5dp"
         android:background="@color/bg_gray"/>
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin">
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:text="担任职位"
-            android:textSize="@dimen/text_size_normal"/>
-
-        <EditText
-            android:id="@+id/et_sub_function"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:layout_weight="1"
-            android:background="@null"
-            android:gravity="right"
-            android:singleLine="true"/>
-    </LinearLayout>
-
-    <View
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp"
-        android:background="@color/bg_gray"/>
-
 
     <android.support.design.widget.TextInputLayout
         android:layout_width="match_parent"
@@ -225,7 +206,7 @@
         android:textColorHint="@color/colorPrimary">
 
         <EditText
-            android:id="@+id/et_responsibility"
+            android:id="@+id/et_seleveluation"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginLeft="@dimen/item_margin"
@@ -233,10 +214,14 @@
             android:layout_marginTop="@dimen/item_margin"
             android:background="@null"
             android:gravity="top"
-            android:hint="@string/work_experience_et_hint"
+            android:hint="@string/job_objective_et_hint"
             android:paddingBottom="@dimen/item_margin"
             android:paddingTop="@dimen/padding_left"/>
     </android.support.design.widget.TextInputLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/bg_gray"/>
 
 </LinearLayout>

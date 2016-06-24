@@ -14,10 +14,9 @@ import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
 
 /**
- * Created by xusha on 2016/6/21.
+ * Created by xusha on 2016/6/22.
  */
-public class EducationFragment extends BaseFragment implements BaseFragment.MyOnClickListener {
-
+public class TrainExperienceFragment extends BaseFragment implements BaseFragment.MyOnClickListener {
     @BindView(R.id.toolbar)
     Toolbar mToolbar;
     @BindView(R.id.tv_start_date)
@@ -28,14 +27,12 @@ public class EducationFragment extends BaseFragment implements BaseFragment.MyOn
     TextView mTvEndDate;
     @BindView(R.id.ll_end_date)
     LinearLayout mLlEndDate;
-    @BindView(R.id.et_school_name)
-    EditText mEtSchoolName;
-    @BindView(R.id.et_major)
-    EditText mEtMajor;
-    @BindView(R.id.tv_degree)
-    TextView mTvDegree;
-    @BindView(R.id.ll_degree)
-    LinearLayout mLlDegree;
+    @BindView(R.id.et_train_org)
+    EditText mEtTrainOrg;
+    @BindView(R.id.et_class_name)
+    EditText mEtClassName;
+    @BindView(R.id.et_description)
+    EditText mEtDescription;
 
     private String[] mData;
 
@@ -46,11 +43,10 @@ public class EducationFragment extends BaseFragment implements BaseFragment.MyOn
         initClick();
 
         setHasOptionsMenu(true);
-        setToolbar(mToolbar, R.string.title_education);
+        setToolbar(mToolbar, R.string.title_train_experience);
     }
 
     private void initClick() {
-        mLlDegree.setOnClickListener(this);
         mLlStartDate.setOnClickListener(this);
         mLlEndDate.setOnClickListener(this);
     }
@@ -63,7 +59,7 @@ public class EducationFragment extends BaseFragment implements BaseFragment.MyOn
 
     @Override
     protected int getLayoutId() {
-        return R.layout.fragment_education;
+        return R.layout.fragment_train_experience;
     }
 
     @Override
@@ -75,11 +71,6 @@ public class EducationFragment extends BaseFragment implements BaseFragment.MyOn
 
             case R.id.ll_end_date:
                 showDateSelectDialog(mTvEndDate);
-                break;
-
-            case R.id.ll_degree:
-                mData = new String[]{"大专", "本科", "研究生", "博士"};
-                showDialog(mData, mTvDegree);
                 break;
 
             default:

@@ -73,7 +73,7 @@ public class ForgotPwdFragment extends BaseFragment {
             case R.id.btn_submit_code:
 
                 //提交验证码成功后，重置密码
-                addFragment(new ResetPwdFragment());
+                addFragment(this, new ResetPwdFragment());
                 break;
         }
     }

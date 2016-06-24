@@ -10,11 +10,10 @@
         layout="@layout/app_bar_main"/>
 
     <LinearLayout
+        android:id="@+id/ll_start_date"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_marginLeft="@dimen/item_margin"
-        android:layout_marginRight="@dimen/item_margin"
-        android:layout_marginTop="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -49,11 +48,10 @@
         android:background="@color/bg_gray"/>
 
     <LinearLayout
+        android:id="@+id/ll_end_date"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_marginLeft="@dimen/item_margin"
-        android:layout_marginRight="@dimen/item_margin"
-        android:layout_marginTop="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -90,9 +88,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_marginLeft="@dimen/item_margin"
-        android:layout_marginRight="@dimen/item_margin"
-        android:layout_marginTop="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -107,6 +103,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
+            android:layout_gravity="center_vertical"
             android:gravity="right"
             android:singleLine="true"/>
     </LinearLayout>
@@ -119,9 +116,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_marginLeft="@dimen/item_margin"
-        android:layout_marginRight="@dimen/item_margin"
-        android:layout_marginTop="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
@@ -136,6 +131,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:background="@null"
+            android:layout_gravity="center_vertical"
             android:gravity="right"
             android:singleLine="true"/>
     </LinearLayout>
@@ -146,6 +142,7 @@
         android:background="@color/bg_gray"/>
 
     <LinearLayout
+        android:id="@+id/ll_degree"
         android:clickable="true"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"

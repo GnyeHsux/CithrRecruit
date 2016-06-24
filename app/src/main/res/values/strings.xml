@@ -61,4 +61,10 @@
     <string name="title_create_resume">创建简历</string>
     <string name="title_education">教育经历</string>
     <string name="title_work_experience">工作经历</string>
+    <string name="title_job_objective">求职意向</string>
+    <string name="title_language_ability">语言能力</string>
+    <string name="title_train_experience">培训经历</string>
+    <string name="job_objective_et_hint">自我评价(100-300字)</string>
+    <string name="work_experience_et_hint">工作描述(100-300字)</string>
+    <string name="train_experience_et_hint">详细描述(100-300字)</string>
 </resources>
