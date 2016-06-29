@@ -31,6 +31,8 @@ public abstract class AppActivity extends BaseActivity {
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);//竖屏
         setContentView(getContentViewId());
 
+        // getSwipeBackLayout().setEdgeOrientation(SwipeBackLayout.EDGE_LEFT ); // EDGE_LEFT(默认),EDGE_ALL
+
         //判断网络情况
         if (!isNetworkAvailable(this)) {
             Toast.makeText(this, R.string.network_err, Toast.LENGTH_SHORT).show();
@@ -46,7 +48,7 @@ public abstract class AppActivity extends BaseActivity {
             BaseFragment firstFragment = getFirstFragment();
             //Fragment fragment = new Fragment();
             if (null != firstFragment) {
-                addFragment(null, firstFragment);
+                addFragment(firstFragment);
             }
         }
 

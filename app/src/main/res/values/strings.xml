@@ -1,10 +1,9 @@
 <resources>
     <string name="app_name">万才招聘</string>
     <string name="home_name">万才招聘</string>
-    <string name="item1">首页</string>
-    <string name="item2">职位收藏夹</string>
-    <string name="item3">我的职位申请</string>
-    <string name="item4">我的黑名单</string>
+    <string name="menu_home">首页</string>
+    <string name="menu_job_favorite">职位收藏夹</string>
+    <string name="menu_job_apply">我的职位申请</string>
     <string name="item5">更多设置</string>
     <string name="item6">意见反馈</string>
     <string name="item7">常见问题</string>
@@ -57,6 +56,7 @@
     <string name="result_login">MyLoginResult</string>
     <string name="method_register">UserRegister</string>
     <string name="result_register">UserRegisterResult</string>
+
     <string name="preview_resume">预览</string>
     <string name="title_create_resume">创建简历</string>
     <string name="title_education">教育经历</string>
@@ -67,4 +67,5 @@
     <string name="job_objective_et_hint">自我评价(100-300字)</string>
     <string name="work_experience_et_hint">工作描述(100-300字)</string>
     <string name="train_experience_et_hint">详细描述(100-300字)</string>
+    <string name="title_job_favorite">职位收藏</string>
 </resources>

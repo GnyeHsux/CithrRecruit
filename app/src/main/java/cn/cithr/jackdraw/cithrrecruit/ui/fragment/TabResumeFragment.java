@@ -86,6 +86,9 @@ public class TabResumeFragment extends BaseFragment implements SwipeRefreshLayou
                 }
             }
         });
+
+        //取消侧滑返回
+        setSwipeBackEnable(false);
     }
 
     private void initData() {

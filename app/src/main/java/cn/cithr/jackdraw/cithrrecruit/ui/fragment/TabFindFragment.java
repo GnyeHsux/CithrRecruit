@@ -14,6 +14,9 @@ public class TabFindFragment extends BaseFragment {
     @Override
     protected void initView(View view, Bundle savedInstanceState) {
 
+        //取消侧滑返回
+        setSwipeBackEnable(false);
+
     }
 
     @Override

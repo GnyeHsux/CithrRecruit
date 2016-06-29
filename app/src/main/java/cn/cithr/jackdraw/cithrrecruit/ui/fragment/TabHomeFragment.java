@@ -79,6 +79,9 @@ public class TabHomeFragment extends BaseFragment implements SwipeRefreshLayout.
                 loadMoreData();
             }
         });
+
+        //取消侧滑返回
+        setSwipeBackEnable(false);
     }
 
     //初始化一开始加载的数据

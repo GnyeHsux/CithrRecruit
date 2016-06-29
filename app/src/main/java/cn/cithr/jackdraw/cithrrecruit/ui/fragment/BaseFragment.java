@@ -17,7 +17,6 @@ import java.util.Calendar;
 import cn.cithr.jackdraw.cithrrecruit.app.MyApplication;
 import cn.cithr.jackdraw.cithrrecruit.ui.activity.BaseActivity;
 import cn.cithr.jackdraw.cithrrecruit.utils.ToastUtils;
-import me.yokeyword.fragmentation.SwipeBackLayout;
 import me.yokeyword.fragmentation_swipeback.SwipeBackFragment;
 
 
@@ -46,9 +45,9 @@ public abstract class BaseFragment extends SwipeBackFragment implements View.OnC
     }
 
     //添加fragment
-    protected void addFragment(BaseFragment fromFragment, BaseFragment toFragment) {
-        if (null != toFragment) {
-            getHoldingActivity().addFragment(fromFragment, toFragment);
+    protected void addFragment(BaseFragment fragment) {
+        if (null != fragment) {
+            getHoldingActivity().addFragment(fragment);
         }
     }
 
@@ -62,9 +61,7 @@ public abstract class BaseFragment extends SwipeBackFragment implements View.OnC
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(getLayoutId(), container, false);
         initView(view, savedInstanceState);
-        // 设置滑动方向
-        getSwipeBackLayout().setEdgeOrientation(SwipeBackLayout.EDGE_RIGHT); // EDGE_LEFT(默认),EDGE_ALL
-        return attachToSwipeBack(view);
+        return attachToSwipeBack(view); //添加滑动返回
     }
 
     public void setToolbar(Toolbar toolbar, int title) {
