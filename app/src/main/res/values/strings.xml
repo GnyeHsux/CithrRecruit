@@ -49,14 +49,6 @@
     <string name="title_company_info">公司详情</string>
     <string name="search_hint">搜索...</string>
     <string name="other_transition_name">transition_reveal</string>
-
-    <string name="namespace">http://tempuri.org/</string>
-    <string name="wsdl_login_and_registe">http://58.215.179.167/LoginAndRegiste.asmx?WSDL</string>
-    <string name="method_login">MyLogin</string>
-    <string name="result_login">MyLoginResult</string>
-    <string name="method_register">UserRegister</string>
-    <string name="result_register">UserRegisterResult</string>
-
     <string name="preview_resume">预览</string>
     <string name="title_create_resume">创建简历</string>
     <string name="title_education">教育经历</string>
@@ -68,4 +60,33 @@
     <string name="work_experience_et_hint">工作描述(100-300字)</string>
     <string name="train_experience_et_hint">详细描述(100-300字)</string>
     <string name="title_job_favorite">职位收藏</string>
+    <string name="title_job_apply">职位申请</string>
+    <string name="warm_job_apply">系统将自动删除2个月以上的职位申请记录</string>
+    <string name="start_time">开始时间</string>
+    <string name="end_time">结束时间</string>
+    <string name="company_name">公司名称</string>
+    <string name="company_nature">公司性质</string>
+    <string name="company_industry">所属行业</string>
+    <string name="sub_function">担任职位</string>
+    <string name="name">姓名</string>
+    <string name="gender">性别</string>
+    <string name="marriage">婚姻状况</string>
+    <string name="birthday">出生日期</string>
+    <string name="degree">最高学历</string>
+    <string name="polictical_status">政治面貌</string>
+    <string name="location">现居地</string>
+    <string name="work_year">工作年限</string>
+    <string name="mobile">手机号码</string>
+    <string name="email">邮箱</string>
+    <string name="train_org">培训机构名称</string>
+    <string name="class_name">培训课程</string>
+
+    <string name="namespace">http://tempuri.org/</string>
+    <string name="wsdl_login_and_registe">http://58.215.179.167/LoginAndRegiste.asmx?WSDL</string>
+    <string name="method_login">MyLogin</string>
+    <string name="result_login">MyLoginResult</string>
+    <string name="method_register">UserRegister</string>
+    <string name="result_register">UserRegisterResult</string>
+
+
 </resources>

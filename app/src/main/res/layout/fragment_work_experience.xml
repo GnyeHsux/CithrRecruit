@@ -13,15 +13,14 @@
         android:id="@+id/ll_start_date"
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin"
-        android:layout_marginLeft="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="开始时间"
+            android:text="@string/start_time"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -29,6 +28,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -55,11 +55,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="结束时间"
+            android:text="@string/end_time"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -67,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -95,17 +96,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="公司名称"
+            android:text="@string/company_name"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
+            android:inputType="text"
             android:id="@+id/et_company_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:singleLine="true"/>
     </LinearLayout>
 
@@ -121,11 +123,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="公司性质"
+            android:text="@string/company_nature"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -133,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -159,11 +162,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="所属行业"
+            android:text="@string/company_industry"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -171,6 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -199,17 +203,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="担任职位"
+            android:text="@string/sub_function"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
+            android:inputType="text"
             android:id="@+id/et_sub_function"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:singleLine="true"/>
     </LinearLayout>
 

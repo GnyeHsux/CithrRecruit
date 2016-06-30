@@ -58,7 +58,7 @@ public class JobFavoriteListAdapter extends RecyclerView.Adapter<JobFavoriteList
         }
     }
 
-    //添加职位
+    //添加职位(恢复删除项)
     public void addData(int position) {
         mJobFavoriteList.add(position, new JobFavoriteList("XXX职位 " + (position + 1), "九九鼎盛营销策划有限公司"));
         notifyItemInserted(position);

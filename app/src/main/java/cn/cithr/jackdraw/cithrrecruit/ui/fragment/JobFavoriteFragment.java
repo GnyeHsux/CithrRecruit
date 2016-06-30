@@ -40,6 +40,7 @@ public class JobFavoriteFragment extends BaseFragment implements RecyclerTouchLi
         ButterKnife.bind(this, view);
         mToolbar.setTitle(R.string.title_job_favorite);
         ((MainActivity) getActivity()).setToolBar(mToolbar);
+        setSwipeBackEnable(false);
 
         mJobFavoriteListAdapter = new JobFavoriteListAdapter(getHoldingActivity(), getData());
         mRvJobFavorite.setAdapter(mJobFavoriteListAdapter);

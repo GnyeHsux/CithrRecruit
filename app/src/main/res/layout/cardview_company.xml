@@ -4,6 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    xmlns:tool="http://schemas.android.com/tools"
     android:id="@+id/rl_company"
     android:layout_margin="15dp"
     app:cardCornerRadius="1dp">
@@ -13,6 +14,7 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
         android:src="@drawable/xsy"
         />
 
@@ -23,7 +25,7 @@
         android:layout_alignLeft="@+id/tv_IndustryName"
         android:layout_alignStart="@+id/tv_IndustryName"
         android:layout_marginTop="12dp"
-        android:text="九九鼎盛营销策划有限公司"
+        tool:text="九九鼎盛营销策划有限公司"
         android:textColor="@color/black"/>
 
     <TextView
@@ -32,7 +34,8 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_CmpanyName"
         android:layout_toRightOf="@+id/img_CompanyLogo"
-        android:text="IT公司"/>
+        android:layout_toEndOf="@+id/img_CompanyLogo"
+        tool:text="IT公司"/>
 
     <TextView
         android:id="@+id/tv_companyNatureName"
@@ -40,8 +43,10 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_CmpanyName"
         android:layout_toRightOf="@+id/tv_IndustryName"
+        android:layout_toEndOf="@+id/tv_IndustryName"
         android:paddingLeft="10dp"
-        android:text="民营公司"/>
+        android:paddingStart="10dp"
+        tool:text="民营公司"/>
 
     <TextView
         android:id="@+id/tv_CompanySizeName"
@@ -49,7 +54,9 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/tv_CmpanyName"
         android:layout_toRightOf="@+id/tv_companyNatureName"
+        android:layout_toEndOf="@+id/tv_companyNatureName"
         android:paddingLeft="10dp"
-        android:text="20-50人"/>
+        android:paddingStart="10dp"
+        tool:text="20-50人"/>
 
 </RelativeLayout>

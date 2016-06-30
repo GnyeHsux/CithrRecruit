@@ -12,24 +12,24 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/item_hight"
-        android:layout_margin="@dimen/item_margin"
-        android:layout_marginLeft="@dimen/item_margin">
+        android:layout_margin="@dimen/item_margin">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="姓名"
+            android:text="@string/name"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
+            android:inputType="text"
             android:id="@+id/et_user_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:singleLine="true"/>
     </LinearLayout>
 
@@ -45,11 +45,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="性别"
+            android:text="@string/gender"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -57,6 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -83,11 +84,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="婚姻状况"
+            android:text="@string/marriage"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -95,6 +96,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -121,11 +123,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="出生日期"
+            android:text="@string/birthday"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -133,6 +135,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -159,11 +162,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="最高学历"
+            android:text="@string/degree"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -171,6 +174,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -197,11 +201,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="政治面貌"
+            android:text="@string/polictical_status"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -209,6 +213,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -235,11 +240,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="现居地"
+            android:text="@string/location"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -247,6 +252,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
             android:layout_marginRight="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
@@ -275,17 +281,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="工作年限"
+            android:text="@string/work_year"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
-            android:id="@+id/et_workyear"
-            android:layout_width="wrap_content"
+            android:id="@+id/et_work_year"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:inputType="number"
             android:singleLine="true"/>
     </LinearLayout>
@@ -304,17 +310,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="手机号码"
+            android:text="@string/mobile"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
             android:id="@+id/et_mobile"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:inputType="phone"
             android:singleLine="true"/>
     </LinearLayout>
@@ -333,17 +339,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="邮箱"
+            android:text="@string/email"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
             android:id="@+id/et_email"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:inputType="textEmailAddress"
             android:singleLine="true"/>
     </LinearLayout>

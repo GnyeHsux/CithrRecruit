@@ -17,6 +17,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import cn.cithr.jackdraw.cithrrecruit.R;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.BaseFragment;
+import cn.cithr.jackdraw.cithrrecruit.ui.fragment.JobApplayFragment;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.JobFavoriteFragment;
 import cn.cithr.jackdraw.cithrrecruit.ui.fragment.MainFragment;
 
@@ -77,7 +78,7 @@ public class MainActivity extends AppActivity implements NavigationView.OnNaviga
                 break;
             case R.id.menu_job_apply:
                 mCurrentMenuItem = id;
-                Toast.makeText(MainActivity.this, "menu_job_apply", Toast.LENGTH_SHORT).show();
+                addFragment(new JobApplayFragment());
                 break;
             case R.id.menu_item_5:
                 mCurrentMenuItem = id;

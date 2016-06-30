@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                xmlns:app="http://schemas.android.com/apk/res-auto"
-                xmlns:tools="http://schemas.android.com/tools"
+                xmlns:tool="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
@@ -11,6 +10,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
         android:orientation="horizontal">
 
 
@@ -31,8 +31,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center"
                     android:src="@mipmap/ic_send_white"
                     android:tint="@android:color/white"/>
@@ -71,8 +71,8 @@
                 android:orientation="vertical">
 
                 <ImageView
-                    android:layout_width="30dp"
-                    android:layout_height="30dp"
+                    android:layout_width="25dp"
+                    android:layout_height="25dp"
                     android:layout_gravity="center_horizontal"
                     android:src="@mipmap/ic_favorite_white"
                     android:tint="@android:color/white"/>
@@ -112,20 +112,22 @@
             android:background="?attr/selectableItemBackground"
             android:orientation="horizontal"
             android:paddingBottom="10dp"
-            android:paddingLeft="5dp"
+            android:paddingLeft="15dp"
+            android:paddingStart="15dp"
             android:paddingTop="10dp">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/img_company_logo"
-                android:src="@drawable/xsy"
                 android:layout_width="60dp"
-                android:layout_height="60dp"/>
+                android:layout_height="60dp"
+                android:src="@drawable/default_bg"/>
 
             <LinearLayout
-                android:layout_marginLeft="@dimen/item_margin"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
+                android:layout_marginLeft="@dimen/item_margin"
+                android:layout_marginStart="@dimen/item_margin"
                 android:layout_weight="1"
                 android:orientation="vertical">
 
@@ -134,17 +136,17 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:maxLines="1"
-                    android:text="客服专员"
                     android:textSize="16sp"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    tool:text="客服专员"/>
 
                 <TextView
                     android:id="@+id/tv_company_name"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="2dp"
-                    android:text="九九鼎盛营销策划有限公司"
-                    android:maxLines="1"/>
+                    android:maxLines="1"
+                    tool:text="九九鼎盛营销策划有限公司"/>
 
             </LinearLayout>
 

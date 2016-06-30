@@ -2,7 +2,7 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/cardView"
+    xmlns:tool="http://schemas.android.com/tools"
     android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="@dimen/rv_item_home_height"
@@ -15,6 +15,7 @@
         android:layout_height="@dimen/rv_item_img_width"
         android:layout_gravity="center_vertical"
         android:layout_marginLeft="@dimen/rv_item_margin"
+        android:layout_marginStart="@dimen/rv_item_margin"
         android:src="@drawable/xsy"
         app:border_color="@android:color/white"
         app:border_width="1dp"/>
@@ -24,6 +25,7 @@
         android:layout_height="match_parent"
         android:layout_margin="6dp"
         android:layout_toRightOf="@id/img_companyLogo"
+        android:layout_toEndOf="@id/img_companyLogo"
         android:gravity="center"
         android:orientation="vertical">
 
@@ -34,12 +36,12 @@
 
             <TextView
                 android:id="@+id/item_tv_jobName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="产品经理"
+                tool:text="产品经理"
                 android:textColor="@android:color/black"
                 android:textSize="@dimen/text_size_normal"/>
 
@@ -48,7 +50,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center_vertical"
-                android:text="北京"/>
+                tool:text="北京"/>
         </LinearLayout>
 
         <LinearLayout
@@ -58,19 +60,19 @@
 
             <TextView
                 android:id="@+id/item_tv_companyName"
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:singleLine="true"
-                android:text="无锡九九鼎盛营销策划有限公司"
+                tool:text="无锡九九鼎盛营销策划有限公司"
                 android:textSize="@dimen/text_size_small"/>
 
             <TextView
                 android:id="@+id/item_tv_salaryRange"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="5k-10k"
+                tool:text="5k-10k"
                 android:textColor="@android:color/holo_red_dark"
                 android:textSize="@dimen/text_size_small"/>
         </LinearLayout>
@@ -84,7 +86,7 @@
                 android:id="@+id/item_tv_workYears"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="1-5年"
+                tool:text="1-5年"
                 android:textSize="@dimen/text_size_small"/>
 
             <TextView
@@ -92,17 +94,18 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:paddingLeft="10dp"
-                android:text="本科"
+                android:paddingStart="10dp"
+                tool:text="本科"
                 android:textSize="@dimen/text_size_small"/>
 
             <TextView
-                android:layout_width="wrap_content"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
                 android:ellipsize="end"
                 android:gravity="end"
                 android:singleLine="true"
-                android:text="05-14"
+                tool:text="05-14"
                 android:textSize="@dimen/text_size_small"/>
 
         </LinearLayout>

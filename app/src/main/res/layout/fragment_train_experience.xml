@@ -16,11 +16,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="开始时间"
+            android:text="@string/start_time"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -29,6 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_normal"/>
@@ -54,11 +55,11 @@
         android:layout_margin="@dimen/item_margin">
 
         <TextView
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
-            android:text="结束时间"
+            android:text="@string/end_time"
             android:textSize="@dimen/text_size_normal"/>
 
         <TextView
@@ -67,6 +68,7 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_marginRight="5dp"
+            android:layout_marginEnd="5dp"
             android:singleLine="true"
             android:textColor="@color/black"
             android:textSize="@dimen/text_size_normal"/>
@@ -94,17 +96,17 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="培训机构名称"
+            android:text="@string/train_org"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
             android:id="@+id/et_train_org"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:singleLine="true"/>
     </LinearLayout>
 
@@ -123,17 +125,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
-            android:text="培训课程"
+            android:text="@string/class_name"
             android:textSize="@dimen/text_size_normal"/>
 
         <EditText
+            android:inputType="text"
             android:id="@+id/et_class_name"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:layout_weight="1"
             android:background="@null"
-            android:gravity="right"
+            android:gravity="end"
             android:singleLine="true"/>
     </LinearLayout>
 

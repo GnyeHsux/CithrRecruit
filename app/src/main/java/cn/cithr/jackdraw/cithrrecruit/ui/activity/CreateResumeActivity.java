@@ -17,6 +17,7 @@ import android.provider.MediaStore;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.AppCompatCheckBox;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.Toolbar;
 import android.transition.Fade;
@@ -28,7 +29,6 @@ import android.view.View;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.RelativeLayout;
-import android.widget.Switch;
 import android.widget.TextView;
 
 import java.io.File;
@@ -59,8 +59,8 @@ public class CreateResumeActivity extends AppCompatActivity implements View.OnCl
     CardView mCardView1;
     @BindView(R.id.cardView2)
     CardView mCardView2;
-    @BindView(R.id.switch_isOpen)
-    Switch mSwitchIsOpen;
+    @BindView(R.id.cb_isOpen)
+    AppCompatCheckBox mCheckBox;
     @BindView(R.id.textview)
     TextView mTextView;
 
@@ -108,8 +108,8 @@ public class CreateResumeActivity extends AppCompatActivity implements View.OnCl
             mCardView1.setVisibility(View.VISIBLE);
             mCardView2.startAnimation(animation);
             mCardView2.setVisibility(View.VISIBLE);
-            mSwitchIsOpen.startAnimation(animation);
-            mSwitchIsOpen.setVisibility(View.VISIBLE);
+            mCheckBox.startAnimation(animation);
+            mCheckBox.setVisibility(View.VISIBLE);
             mTextView.startAnimation(animation);
             mTextView.setVisibility(View.VISIBLE);
         });
