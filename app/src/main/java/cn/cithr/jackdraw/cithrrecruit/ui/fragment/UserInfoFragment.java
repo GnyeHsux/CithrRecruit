@@ -33,8 +33,8 @@ public class UserInfoFragment extends BaseFragment implements BaseFragment.MyOnC
     TextView mTvPolicticalStatus;
     @BindView(R.id.tv_location)
     TextView mTvLocation;
-    @BindView(R.id.et_workyear)
-    EditText mEtWorkyear;
+    @BindView(R.id.et_work_year)
+    EditText mEtWorkYear;
     @BindView(R.id.et_mobile)
     EditText mEtMobile;
     @BindView(R.id.et_email)
